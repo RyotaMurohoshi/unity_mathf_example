@@ -223,4 +223,55 @@ public class MathfTest
 		Assert.That (Mathf.FloorToInt (-2.5F), Is.EqualTo (-3));
 	}
 
+	[Test]
+	public void CeilTest ()
+	{
+		Assert.That (Mathf.Ceil (+2.5F), Is.EqualTo (3.0F));
+		Assert.That (Mathf.Ceil (+2.1F), Is.EqualTo (3.0F));
+		Assert.That (Mathf.Ceil (+2.0F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Ceil (+1.999999F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Ceil (+1.5F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Ceil (+1.1F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Ceil (+1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Ceil (+0.999999F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Ceil (+0.5F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Ceil (+float.Epsilon), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Ceil (0.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Ceil (-float.Epsilon), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Ceil (-0.5F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Ceil (-0.999999F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Ceil (-1.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Ceil (-1.1F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Ceil (-1.5F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Ceil (-1.999999F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Ceil (-2.0F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Ceil (-2.1F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Ceil (-2.5F), Is.EqualTo (-2.0F));
+	}
+
+	[Test]
+	public void CeilToIntTest ()
+	{
+		Assert.That (Mathf.CeilToInt (+2.5F), Is.EqualTo (3));
+		Assert.That (Mathf.CeilToInt (+2.1F), Is.EqualTo (3));
+		Assert.That (Mathf.CeilToInt (+2.0F), Is.EqualTo (2));
+		Assert.That (Mathf.CeilToInt (+1.999999F), Is.EqualTo (2));
+		Assert.That (Mathf.CeilToInt (+1.5F), Is.EqualTo (2));
+		Assert.That (Mathf.CeilToInt (+1.1F), Is.EqualTo (2));
+		Assert.That (Mathf.CeilToInt (+1.0F), Is.EqualTo (1));
+		Assert.That (Mathf.CeilToInt (+0.999999F), Is.EqualTo (1));
+		Assert.That (Mathf.CeilToInt (+0.5F), Is.EqualTo (1));
+		Assert.That (Mathf.CeilToInt (+float.Epsilon), Is.EqualTo (1));
+		Assert.That (Mathf.CeilToInt (0.0F), Is.EqualTo (0));
+		Assert.That (Mathf.CeilToInt (-float.Epsilon), Is.EqualTo (0));
+		Assert.That (Mathf.CeilToInt (-0.5F), Is.EqualTo (0));
+		Assert.That (Mathf.CeilToInt (-0.999999F), Is.EqualTo (0));
+		Assert.That (Mathf.CeilToInt (-1.0F), Is.EqualTo (-1));
+		Assert.That (Mathf.CeilToInt (-1.1F), Is.EqualTo (-1));
+		Assert.That (Mathf.CeilToInt (-1.5F), Is.EqualTo (-1));
+		Assert.That (Mathf.CeilToInt (-1.999999F), Is.EqualTo (-1));
+		Assert.That (Mathf.CeilToInt (-2.0F), Is.EqualTo (-2));
+		Assert.That (Mathf.CeilToInt (-2.1F), Is.EqualTo (-2));
+		Assert.That (Mathf.CeilToInt (-2.5F), Is.EqualTo (-2));
+	}
 }
