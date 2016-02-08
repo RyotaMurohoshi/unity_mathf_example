@@ -274,4 +274,80 @@ public class MathfTest
 		Assert.That (Mathf.CeilToInt (-2.1F), Is.EqualTo (-2));
 		Assert.That (Mathf.CeilToInt (-2.5F), Is.EqualTo (-2));
 	}
+
+	[Test]
+	public void RoundTest ()
+	{
+		Assert.That (Mathf.Round (+6.5F), Is.EqualTo (6.0F));
+		Assert.That (Mathf.Round (+5.5F), Is.EqualTo (6.0F));
+
+		Assert.That (Mathf.Round (+4.5F), Is.EqualTo (4.0F));
+		Assert.That (Mathf.Round (+3.5F), Is.EqualTo (4.0F));
+
+		Assert.That (Mathf.Round (+2.5F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Round (+2.1F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Round (+2.0F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Round (+1.999999F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Round (+1.5F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Round (+1.1F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Round (+1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Round (+0.999999F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Round (+0.5F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Round (+float.Epsilon), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Round (0.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Round (-float.Epsilon), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Round (-0.5F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Round (-0.999999F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Round (-1.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Round (-1.1F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Round (-1.5F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Round (-1.999999F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Round (-2.0F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Round (-2.1F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Round (-2.5F), Is.EqualTo (-2.0F));
+
+		Assert.That (Mathf.Round (-3.5F), Is.EqualTo (-4.0F));
+		Assert.That (Mathf.Round (-4.5F), Is.EqualTo (-4.0F));
+
+		Assert.That (Mathf.Round (-5.5F), Is.EqualTo (-6.0F));
+		Assert.That (Mathf.Round (-6.5F), Is.EqualTo (-6.0F));
+	}
+
+	[Test]
+	public void RoundToIntTest ()
+	{
+		Assert.That (Mathf.RoundToInt (+6.5F), Is.EqualTo (6));
+		Assert.That (Mathf.RoundToInt (+5.5F), Is.EqualTo (6));
+
+		Assert.That (Mathf.RoundToInt (+4.5F), Is.EqualTo (4));
+		Assert.That (Mathf.RoundToInt (+3.5F), Is.EqualTo (4));
+
+		Assert.That (Mathf.RoundToInt (+2.5F), Is.EqualTo (2));
+		Assert.That (Mathf.RoundToInt (+2.1F), Is.EqualTo (2));
+		Assert.That (Mathf.RoundToInt (+2.0F), Is.EqualTo (2));
+		Assert.That (Mathf.RoundToInt (+1.999999F), Is.EqualTo (2));
+		Assert.That (Mathf.RoundToInt (+1.5F), Is.EqualTo (2));
+		Assert.That (Mathf.RoundToInt (+1.1F), Is.EqualTo (1));
+		Assert.That (Mathf.RoundToInt (+1.0F), Is.EqualTo (1));
+		Assert.That (Mathf.RoundToInt (+0.999999F), Is.EqualTo (1));
+		Assert.That (Mathf.RoundToInt (+0.5F), Is.EqualTo (0));
+		Assert.That (Mathf.RoundToInt (+float.Epsilon), Is.EqualTo (0));
+		Assert.That (Mathf.RoundToInt (0.0F), Is.EqualTo (0));
+		Assert.That (Mathf.RoundToInt (-float.Epsilon), Is.EqualTo (0));
+		Assert.That (Mathf.RoundToInt (-0.5F), Is.EqualTo (0));
+		Assert.That (Mathf.RoundToInt (-0.999999F), Is.EqualTo (-1));
+		Assert.That (Mathf.RoundToInt (-1.0F), Is.EqualTo (-1));
+		Assert.That (Mathf.RoundToInt (-1.1F), Is.EqualTo (-1));
+		Assert.That (Mathf.RoundToInt (-1.5F), Is.EqualTo (-2));
+		Assert.That (Mathf.RoundToInt (-1.999999F), Is.EqualTo (-2));
+		Assert.That (Mathf.RoundToInt (-2.0F), Is.EqualTo (-2));
+		Assert.That (Mathf.RoundToInt (-2.1F), Is.EqualTo (-2));
+		Assert.That (Mathf.RoundToInt (-2.5F), Is.EqualTo (-2));
+
+		Assert.That (Mathf.RoundToInt (-3.5F), Is.EqualTo (-4));
+		Assert.That (Mathf.RoundToInt (-4.5F), Is.EqualTo (-4));
+
+		Assert.That (Mathf.RoundToInt (-5.5F), Is.EqualTo (-6));
+		Assert.That (Mathf.RoundToInt (-6.5F), Is.EqualTo (-6));
+	}
 }
