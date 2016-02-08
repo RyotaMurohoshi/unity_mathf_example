@@ -394,4 +394,21 @@ public class MathfTest
 
 		Assert.True (float.IsNaN(Mathf.Repeat(0.5F, 0.0F)));
 	}
+
+	[Test]
+	public void SignTest ()
+	{
+		Assert.That (Mathf.Sign(float.PositiveInfinity), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(+1.5F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(+1.0F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(+0.999999F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(+float.Epsilon), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(+0.0F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(-0.0F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign(-float.Epsilon), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign(-0.999999F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign(-1.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign(-1.5F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign(float.NegativeInfinity), Is.EqualTo (-1.0F));
+	}
 }
