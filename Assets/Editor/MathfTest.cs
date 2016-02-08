@@ -171,5 +171,56 @@ public class MathfTest
 		Assert.That (Mathf.Min (new []{ -3.0F, -1.0F, -4.0F, -1.0F, -5.0F, -9.0F, -2.0F }), Is.EqualTo (-9.0F));
 	}
 
+	[Test]
+	public void FloorTest ()
+	{
+		Assert.That (Mathf.Floor (+2.5F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Floor (+2.1F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Floor (+2.0F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.Floor (+1.999999F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Floor (+1.5F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Floor (+1.1F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Floor (+1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.Floor (+0.999999F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Floor (+0.5F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Floor (+float.Epsilon), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Floor (0.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.Floor (-float.Epsilon), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Floor (-0.5F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Floor (-0.999999F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Floor (-1.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Floor (-1.1F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Floor (-1.5F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Floor (-1.999999F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Floor (-2.0F), Is.EqualTo (-2.0F));
+		Assert.That (Mathf.Floor (-2.1F), Is.EqualTo (-3.0F));
+		Assert.That (Mathf.Floor (-2.5F), Is.EqualTo (-3.0F));
+	}
+
+	[Test]
+	public void FloorToIntTest ()
+	{
+		Assert.That (Mathf.FloorToInt (+2.5F), Is.EqualTo (2));
+		Assert.That (Mathf.FloorToInt (+2.1F), Is.EqualTo (2));
+		Assert.That (Mathf.FloorToInt (+2.0F), Is.EqualTo (2));
+		Assert.That (Mathf.FloorToInt (+1.999999F), Is.EqualTo (1));
+		Assert.That (Mathf.FloorToInt (+1.5F), Is.EqualTo (1));
+		Assert.That (Mathf.FloorToInt (+1.1F), Is.EqualTo (1));
+		Assert.That (Mathf.FloorToInt (+1.0F), Is.EqualTo (1));
+		Assert.That (Mathf.FloorToInt (+0.999999F), Is.EqualTo (0));
+		Assert.That (Mathf.FloorToInt (+0.5F), Is.EqualTo (0));
+		Assert.That (Mathf.FloorToInt (+float.Epsilon), Is.EqualTo (0));
+		Assert.That (Mathf.FloorToInt (0.0F), Is.EqualTo (0));
+		Assert.That (Mathf.FloorToInt (-float.Epsilon), Is.EqualTo (-1));
+		Assert.That (Mathf.FloorToInt (-0.5F), Is.EqualTo (-1));
+		Assert.That (Mathf.FloorToInt (-0.999999F), Is.EqualTo (-1));
+		Assert.That (Mathf.FloorToInt (-1.0F), Is.EqualTo (-1));
+		Assert.That (Mathf.FloorToInt (-1.1F), Is.EqualTo (-2));
+		Assert.That (Mathf.FloorToInt (-1.5F), Is.EqualTo (-2));
+		Assert.That (Mathf.FloorToInt (-1.999999F), Is.EqualTo (-2));
+		Assert.That (Mathf.FloorToInt (-2.0F), Is.EqualTo (-2));
+		Assert.That (Mathf.FloorToInt (-2.1F), Is.EqualTo (-3));
+		Assert.That (Mathf.FloorToInt (-2.5F), Is.EqualTo (-3));
+	}
 
 }
