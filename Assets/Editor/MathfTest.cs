@@ -94,6 +94,38 @@ public class MathfTest
 	}
 
 	[Test]
+	public void ClosestPowerOfTwoTest ()
+	{
+		Assert.That (Mathf.ClosestPowerOfTwo (-128), Is.EqualTo (0));
+		Assert.That (Mathf.ClosestPowerOfTwo (-100), Is.EqualTo (0));
+
+		Assert.That (Mathf.ClosestPowerOfTwo (-4), Is.EqualTo (0));
+		Assert.That (Mathf.ClosestPowerOfTwo (-2), Is.EqualTo (0));
+		Assert.That (Mathf.ClosestPowerOfTwo (-1), Is.EqualTo (0));
+		Assert.That (Mathf.ClosestPowerOfTwo (0), Is.EqualTo (0));
+
+		Assert.That (Mathf.ClosestPowerOfTwo (1), Is.EqualTo (1));
+		Assert.That (Mathf.ClosestPowerOfTwo (2), Is.EqualTo (2));
+		Assert.That (Mathf.ClosestPowerOfTwo (3), Is.EqualTo (4));
+		Assert.That (Mathf.ClosestPowerOfTwo (4), Is.EqualTo (4));
+		Assert.That (Mathf.ClosestPowerOfTwo (5), Is.EqualTo (4));
+		Assert.That (Mathf.ClosestPowerOfTwo (6), Is.EqualTo (8));
+		Assert.That (Mathf.ClosestPowerOfTwo (7), Is.EqualTo (8));
+		Assert.That (Mathf.ClosestPowerOfTwo (8), Is.EqualTo (8));
+		Assert.That (Mathf.ClosestPowerOfTwo (9), Is.EqualTo (8));
+		Assert.That (Mathf.ClosestPowerOfTwo (10), Is.EqualTo (8));
+		Assert.That (Mathf.ClosestPowerOfTwo (11), Is.EqualTo (8));
+		Assert.That (Mathf.ClosestPowerOfTwo (12), Is.EqualTo (16));
+		Assert.That (Mathf.ClosestPowerOfTwo (13), Is.EqualTo (16));
+		Assert.That (Mathf.ClosestPowerOfTwo (14), Is.EqualTo (16));
+		Assert.That (Mathf.ClosestPowerOfTwo (15), Is.EqualTo (16));
+		Assert.That (Mathf.ClosestPowerOfTwo (16), Is.EqualTo (16));
+
+		Assert.That (Mathf.ClosestPowerOfTwo (100), Is.EqualTo (128));
+		Assert.That (Mathf.ClosestPowerOfTwo (128), Is.EqualTo (128));
+	}
+
+	[Test]
 	public void MaxIntTest ()
 	{
 		Assert.That (Mathf.Max (1, 2), Is.EqualTo (2));
