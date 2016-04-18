@@ -32,6 +32,20 @@ public class MathfTest
 	}
 
 	[Test]
+	public void ApproximatelyTest ()
+	{
+		Assert.That (Mathf.Approximately (0.0F, 0.0F), Is.True);
+		Assert.That (Mathf.Approximately (0.0F, float.Epsilon), Is.True);
+		Assert.That (Mathf.Approximately (1.0F, 1.000001F), Is.True);
+		Assert.That (Mathf.Approximately (1.0F, 1.01F), Is.False);
+
+		Assert.That (Mathf.Approximately (100000.0F, 100000.00F), Is.True);
+		Assert.That (Mathf.Approximately (100000.0F, 100000.01F), Is.True);
+
+		// TODO add more tests
+	}
+
+	[Test]
 	public void ClampIntTest ()
 	{
 		//Mathf.Clamp (value, min, max);
@@ -370,7 +384,7 @@ public class MathfTest
 		Assert.That (Mathf.PingPong (1.5F, 1.0F), Is.EqualTo (0.5F));
 		Assert.That (Mathf.PingPong (1.75F, 1.0F), Is.EqualTo (0.25F));
 
-		Assert.True (float.IsNaN(Mathf.PingPong(0.5F, 0.0F)));
+		Assert.True (float.IsNaN (Mathf.PingPong (0.5F, 0.0F)));
 	}
 
 	[Test]
@@ -392,23 +406,23 @@ public class MathfTest
 		Assert.That (Mathf.Repeat (1.5F, 1.0F), Is.EqualTo (0.5F));
 		Assert.That (Mathf.Repeat (1.75F, 1.0F), Is.EqualTo (0.75F));
 
-		Assert.True (float.IsNaN(Mathf.Repeat(0.5F, 0.0F)));
+		Assert.True (float.IsNaN (Mathf.Repeat (0.5F, 0.0F)));
 	}
 
 	[Test]
 	public void SignTest ()
 	{
-		Assert.That (Mathf.Sign(float.PositiveInfinity), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(+1.5F), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(+1.0F), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(+0.999999F), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(+float.Epsilon), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(+0.0F), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(-0.0F), Is.EqualTo (+1.0F));
-		Assert.That (Mathf.Sign(-float.Epsilon), Is.EqualTo (-1.0F));
-		Assert.That (Mathf.Sign(-0.999999F), Is.EqualTo (-1.0F));
-		Assert.That (Mathf.Sign(-1.0F), Is.EqualTo (-1.0F));
-		Assert.That (Mathf.Sign(-1.5F), Is.EqualTo (-1.0F));
-		Assert.That (Mathf.Sign(float.NegativeInfinity), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign (float.PositiveInfinity), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (+1.5F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (+1.0F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (+0.999999F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (+float.Epsilon), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (+0.0F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (-0.0F), Is.EqualTo (+1.0F));
+		Assert.That (Mathf.Sign (-float.Epsilon), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign (-0.999999F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign (-1.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign (-1.5F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.Sign (float.NegativeInfinity), Is.EqualTo (-1.0F));
 	}
 }
