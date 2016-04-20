@@ -148,6 +148,28 @@ public class MathfTest
 	}
 
 	[Test]
+	public void LerpUnclampedTest ()
+	{
+		Assert.That (Mathf.LerpUnclamped (a: 0.0F, b: 1.0F, t: -1.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 0.0F, b: 1.0F, t: 0.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 0.0F, b: 1.0F, t: 1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 0.0F, b: 1.0F, t: 0.25F), Is.EqualTo (0.25F));
+		Assert.That (Mathf.LerpUnclamped (a: 0.0F, b: 1.0F, t: 1.25F), Is.EqualTo (1.25F));
+
+		Assert.That (Mathf.LerpUnclamped (a: -1.0F, b: 3.0F, t: -1.0F), Is.EqualTo (-5.0F));
+		Assert.That (Mathf.LerpUnclamped (a: -1.0F, b: 3.0F, t: 0.0F), Is.EqualTo (-1.0F));
+		Assert.That (Mathf.LerpUnclamped (a: -1.0F, b: 3.0F, t: 1.0F), Is.EqualTo (3.0F));
+		Assert.That (Mathf.LerpUnclamped (a: -1.0F, b: 3.0F, t: 0.25F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.LerpUnclamped (a: -1.0F, b: 3.0F, t: 1.25F), Is.EqualTo (4.0F));
+
+		Assert.That (Mathf.LerpUnclamped (a: 4.0F, b: -4.0F, t: -1.0F), Is.EqualTo (12.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 4.0F, b: -4.0F, t: 0.0F), Is.EqualTo (4.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 4.0F, b: -4.0F, t: 1.0F), Is.EqualTo (-4.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 4.0F, b: -4.0F, t: 0.25F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.LerpUnclamped (a: 4.0F, b: -4.0F, t: 1.25F), Is.EqualTo (-6.0F));
+	}
+
+	[Test]
 	public void MaxIntTest ()
 	{
 		Assert.That (Mathf.Max (1, 2), Is.EqualTo (2));
