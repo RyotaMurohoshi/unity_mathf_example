@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using System;
 using NUnit.Framework;
 
 public class MathfTest
@@ -534,5 +535,39 @@ public class MathfTest
 		Assert.That (Mathf.Sign (-1.0F), Is.EqualTo (-1.0F));
 		Assert.That (Mathf.Sign (-1.5F), Is.EqualTo (-1.0F));
 		Assert.That (Mathf.Sign (float.NegativeInfinity), Is.EqualTo (-1.0F));
+	}
+
+	[Test]
+	public void SmoothStepTest ()
+	{
+		Action<float, float, float> test = (float a, float b, float t) => {
+			float actual = Mathf.SmoothStep (a, b, t);
+			float expected = Mathf.Lerp (a, b, -2 * t * t * t + 3 * t * t);
+			Assert.AreEqual (expected, actual);
+		};
+
+		Assert.That (Mathf.SmoothStep (0.0F, 1.0F, 0.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.SmoothStep (0.0F, 1.0F, 1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.SmoothStep (0.0F, 1.0F, -0.3F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.SmoothStep (0.0F, 1.0F, 1.2F), Is.EqualTo (1.0F));
+		test (0.0F, 1.0F, 0.1F);
+		test (0.0F, 1.0F, 0.5F);
+		test (0.0F, 1.0F, 0.8F);
+
+		Assert.That (Mathf.SmoothStep (2.0F, 5.0F, 0.0F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.SmoothStep (2.0F, 5.0F, 1.0F), Is.EqualTo (5.0F));
+		Assert.That (Mathf.SmoothStep (2.0F, 5.0F, -0.3F), Is.EqualTo (2.0F));
+		Assert.That (Mathf.SmoothStep (2.0F, 5.0F, 1.2F), Is.EqualTo (5.0F));
+		test (2.0F, 5.0F, 0.1F);
+		test (2.0F, 5.0F, 0.5F);
+		test (2.0F, 5.0F, 0.8F);
+
+		Assert.That (Mathf.SmoothStep (4.0F, 1.0F, 0.0F), Is.EqualTo (4.0F));
+		Assert.That (Mathf.SmoothStep (4.0F, 1.0F, 1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.SmoothStep (4.0F, 1.0F, -0.3F), Is.EqualTo (4.0F));
+		Assert.That (Mathf.SmoothStep (4.0F, 1.0F, 1.2F), Is.EqualTo (1.0F));
+		test (4.0F, 1.0F, 0.1F);
+		test (4.0F, 1.0F, 0.5F);
+		test (4.0F, 1.0F, 0.8F);
 	}
 }
