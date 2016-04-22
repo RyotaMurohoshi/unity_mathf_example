@@ -251,6 +251,31 @@ public class MathfTest
 	}
 
 	[Test]
+	public void InverseLerpTest ()
+	{
+		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, -1.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, 0.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, 2.5F), Is.EqualTo (0.25F));
+		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, 5.0F), Is.EqualTo (0.5F));
+		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, 10.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, 15.0F), Is.EqualTo (1.0F));
+
+		Assert.That (Mathf.InverseLerp (-5.0F, 15.0F, -10.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.InverseLerp (-5.0F, 15.0F, -5.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.InverseLerp (-5.0F, 15.0F, 0.0F), Is.EqualTo (0.25F));
+		Assert.That (Mathf.InverseLerp (-5.0F, 15.0F, 5.0F), Is.EqualTo (0.5F));
+		Assert.That (Mathf.InverseLerp (-5.0F, 15.0F, 15.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.InverseLerp (-5.0F, 15.0F, 25.0F), Is.EqualTo (1.0F));
+
+		Assert.That (Mathf.InverseLerp (10.0F, 0.0F, -1.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.InverseLerp (10.0F, 0.0F, 0.0F), Is.EqualTo (1.0F));
+		Assert.That (Mathf.InverseLerp (10.0F, 0.0F, 2.5F), Is.EqualTo (0.75F));
+		Assert.That (Mathf.InverseLerp (10.0F, 0.0F, 5.0F), Is.EqualTo (0.5F));
+		Assert.That (Mathf.InverseLerp (10.0F, 0.0F, 10.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.InverseLerp (10.0F, 0.0F, 15.0F), Is.EqualTo (0.0F));
+	}
+
+	[Test]
 	public void LerpTest ()
 	{
 		Assert.That (Mathf.Lerp (a: 0.0F, b: 1.0F, t: -1.0F), Is.EqualTo (0.0F));
