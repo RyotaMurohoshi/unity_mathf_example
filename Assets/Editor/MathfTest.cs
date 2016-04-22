@@ -127,6 +127,26 @@ public class MathfTest
 	}
 
 	[Test]
+	public void DeltaAngleTest ()
+	{
+		Assert.That (Mathf.DeltaAngle (0, 170.0F), Is.EqualTo (170.0F));
+		Assert.That (Mathf.DeltaAngle (0, 180.0F), Is.EqualTo (180.0F));
+		Assert.That (Mathf.DeltaAngle (0, 181.0F), Is.EqualTo (-179.0F));
+
+		Assert.That (Mathf.DeltaAngle (170.0F, 0.0F), Is.EqualTo (-170.0F));
+		Assert.That (Mathf.DeltaAngle (180.0F, 0.0F), Is.EqualTo (180.0F));
+		Assert.That (Mathf.DeltaAngle (181.0F, 0.0F), Is.EqualTo (179.0F));
+
+		Assert.That (Mathf.DeltaAngle (-30.0F, 20.0F), Is.EqualTo (50.0F));
+		Assert.That (Mathf.DeltaAngle (20.0F, -30.0F), Is.EqualTo (-50.0F));
+
+		Assert.That (Mathf.DeltaAngle (0, 450.0F), Is.EqualTo (90.0F));
+		Assert.That (Mathf.DeltaAngle (0, 540.0F), Is.EqualTo (180.0F));
+		Assert.That (Mathf.DeltaAngle (0, 630.0F), Is.EqualTo (-90.0F));
+		Assert.That (Mathf.DeltaAngle (0, 720.0F), Is.EqualTo (0.0F));
+	}
+
+	[Test]
 	public void LerpTest ()
 	{
 		Assert.That (Mathf.Lerp (a: 0.0F, b: 1.0F, t: -1.0F), Is.EqualTo (0.0F));
