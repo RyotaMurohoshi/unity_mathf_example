@@ -544,6 +544,17 @@ public class MathfTest
 	}
 
 	[Test]
+	public void MoveToWardsTest ()
+	{
+		Assert.That (Mathf.MoveTowards (current: -5.0F, target: 0.0F, maxDelta: 1.0F), Is.EqualTo (-4.0F));
+		Assert.That (Mathf.MoveTowards (current: -1.0F, target: 0.0F, maxDelta: 1.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.MoveTowards (current: -0.25F, target: 0.0F, maxDelta: 1.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.MoveTowards (current: 0.25F, target: 0.0F, maxDelta: 1.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.MoveTowards (current: 1.0F, target: 0.0F, maxDelta: 1.0F), Is.EqualTo (0.0F));
+		Assert.That (Mathf.MoveTowards (current: 5.0F, target: 0.0F, maxDelta: 1.0F), Is.EqualTo (4.0F));
+	}
+
+	[Test]
 	public void PingPongTest ()
 	{
 		Assert.That (Mathf.PingPong (-1.75F, 1.0F), Is.EqualTo (0.25F));
