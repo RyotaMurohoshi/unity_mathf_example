@@ -510,6 +510,40 @@ public class MathfTest
 	}
 
 	[Test]
+	public void NextPowerOfTwoTest ()
+	{
+		Assert.That (Mathf.NextPowerOfTwo (-128), Is.EqualTo (0));
+		Assert.That (Mathf.NextPowerOfTwo (-100), Is.EqualTo (0));
+
+		Assert.That (Mathf.NextPowerOfTwo (-4), Is.EqualTo (0));
+		Assert.That (Mathf.NextPowerOfTwo (-2), Is.EqualTo (0));
+		Assert.That (Mathf.NextPowerOfTwo (-1), Is.EqualTo (0));
+		Assert.That (Mathf.NextPowerOfTwo (0), Is.EqualTo (0));
+
+		Assert.That (Mathf.NextPowerOfTwo (1), Is.EqualTo (1));
+		Assert.That (Mathf.NextPowerOfTwo (2), Is.EqualTo (2));
+		Assert.That (Mathf.NextPowerOfTwo (3), Is.EqualTo (4));
+		Assert.That (Mathf.NextPowerOfTwo (4), Is.EqualTo (4));
+		Assert.That (Mathf.NextPowerOfTwo (5), Is.EqualTo (8));
+		Assert.That (Mathf.NextPowerOfTwo (6), Is.EqualTo (8));
+		Assert.That (Mathf.NextPowerOfTwo (7), Is.EqualTo (8));
+		Assert.That (Mathf.NextPowerOfTwo (8), Is.EqualTo (8));
+		Assert.That (Mathf.NextPowerOfTwo (9), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (10), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (11), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (12), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (13), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (14), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (15), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (16), Is.EqualTo (16));
+		Assert.That (Mathf.NextPowerOfTwo (17), Is.EqualTo (32));
+
+		Assert.That (Mathf.NextPowerOfTwo (100), Is.EqualTo (128));
+		Assert.That (Mathf.NextPowerOfTwo (128), Is.EqualTo (128));
+		Assert.That (Mathf.NextPowerOfTwo (129), Is.EqualTo (256));
+	}
+
+	[Test]
 	public void PingPongTest ()
 	{
 		Assert.That (Mathf.PingPong (-1.75F, 1.0F), Is.EqualTo (0.25F));
