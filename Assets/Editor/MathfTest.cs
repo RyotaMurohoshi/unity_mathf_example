@@ -6,6 +6,17 @@ using NUnit.Framework;
 public class MathfTest
 {
 	[Test]
+	public void ConstantsTest ()
+	{
+		Assert.That (Mathf.Rad2Deg, Is.EqualTo (57.2957802F));
+		Assert.That (Mathf.Deg2Rad, Is.EqualTo (0.0174532924F));
+		Assert.That (Mathf.PI, Is.EqualTo (3.14159274F));
+		Assert.That (Mathf.Epsilon, Is.EqualTo (1.40129846E-45F));
+		Assert.That (Mathf.Infinity, Is.EqualTo (float.PositiveInfinity));
+		Assert.That (Mathf.NegativeInfinity, Is.EqualTo (float.NegativeInfinity));
+	}
+
+	[Test]
 	public void AbsIntTest ()
 	{
 		Assert.That (Mathf.Abs (0), Is.EqualTo (0));
