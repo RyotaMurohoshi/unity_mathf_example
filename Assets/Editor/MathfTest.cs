@@ -251,6 +251,24 @@ public class MathfTest
 	}
 
 	[Test]
+	public void GammaToLinnearSpaceTest ()
+	{
+		Assert.AreEqual (0.0F, Mathf.GammaToLinearSpace (0.0F));
+		Assert.AreEqual (0.01002283F, Mathf.GammaToLinearSpace (0.1F), 0.00001F);
+		Assert.AreEqual (0.03310477F, Mathf.GammaToLinearSpace (0.2F), 0.00001F);
+		Assert.AreEqual (0.07323897F, Mathf.GammaToLinearSpace (0.3F), 0.00001F);
+		Assert.AreEqual (0.13286830F, Mathf.GammaToLinearSpace (0.4F), 0.00001F);
+		Assert.AreEqual (0.21404110F, Mathf.GammaToLinearSpace (0.5F), 0.00001F);
+		Assert.AreEqual (0.31854680F, Mathf.GammaToLinearSpace (0.6F), 0.00001F);
+		Assert.AreEqual (0.44798840F, Mathf.GammaToLinearSpace (0.7F), 0.00001F);
+		Assert.AreEqual (0.60382740F, Mathf.GammaToLinearSpace (0.8F), 0.00001F);
+		Assert.AreEqual (0.78741250F, Mathf.GammaToLinearSpace (0.9F), 0.00001F);
+		Assert.AreEqual (1.0F, Mathf.GammaToLinearSpace (1.0F));
+
+		// TODO Add more test
+	}
+
+	[Test]
 	public void InverseLerpTest ()
 	{
 		Assert.That (Mathf.InverseLerp (0.0F, 10.0F, -1.0F), Is.EqualTo (0.0F));
