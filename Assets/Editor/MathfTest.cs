@@ -294,6 +294,34 @@ public class MathfTest
 	}
 
 	[Test]
+	public void IsPowerOfTwoTst ()
+	{
+		Assert.False (Mathf.IsPowerOfTwo (-1));
+		Assert.True (Mathf.IsPowerOfTwo (0));
+		Assert.True (Mathf.IsPowerOfTwo (1));
+		Assert.True (Mathf.IsPowerOfTwo (2));
+		Assert.False (Mathf.IsPowerOfTwo (3));
+		Assert.True (Mathf.IsPowerOfTwo (4));
+		Assert.False (Mathf.IsPowerOfTwo (5));
+		Assert.False (Mathf.IsPowerOfTwo (6));
+		Assert.False (Mathf.IsPowerOfTwo (7));
+		Assert.True (Mathf.IsPowerOfTwo (8));
+		Assert.False (Mathf.IsPowerOfTwo (9));
+		Assert.False (Mathf.IsPowerOfTwo (10));
+
+		Assert.True (Mathf.IsPowerOfTwo (16));
+		Assert.True (Mathf.IsPowerOfTwo (32));
+		Assert.True (Mathf.IsPowerOfTwo (64));
+		Assert.True (Mathf.IsPowerOfTwo (128));
+		Assert.True (Mathf.IsPowerOfTwo (256));
+		Assert.True (Mathf.IsPowerOfTwo (512));
+		Assert.True (Mathf.IsPowerOfTwo (1024));
+		Assert.True (Mathf.IsPowerOfTwo (2048));
+		Assert.True (Mathf.IsPowerOfTwo (4096));
+		Assert.True (Mathf.IsPowerOfTwo (8192));
+	}
+
+	[Test]
 	public void LerpTest ()
 	{
 		Assert.That (Mathf.Lerp (a: 0.0F, b: 1.0F, t: -1.0F), Is.EqualTo (0.0F));
