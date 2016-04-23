@@ -757,6 +757,39 @@ public class MathfTest
 	}
 
 	[Test]
+	public void SmoothDampAngleTest ()
+	{
+		float currentVelocity;
+		float result;
+
+		currentVelocity = 0.0F;
+		// named argument and ref conflict?
+		result = Mathf.SmoothDampAngle (
+			0.0F, // current
+			1.0F, // target
+			ref  currentVelocity, // currentVelocity
+			0.1F, // smoothTime
+			1.0F, // maxSpeed
+			0.1F // deltaTime
+		);
+		Assert.That (result, Is.EqualTo (0.0558823533F));
+		Assert.That (currentVelocity, Is.EqualTo (0.588235319F));
+
+		currentVelocity = 1.0F;
+		// named argument and ref conflict?
+		result = Mathf.SmoothDampAngle (
+			0.9F, // current
+			1.0F, // target
+			ref  currentVelocity, // currentVelocity
+			0.1F, // smoothTime
+			1.0F, // maxSpeed
+			0.1F // deltaTime
+		);
+		Assert.That (result, Is.EqualTo (0.970588207F));
+		Assert.That (currentVelocity, Is.EqualTo (0.441176504F));
+	}
+
+	[Test]
 	public void SmoothStepTest ()
 	{
 		Action<float, float, float> test = (float a, float b, float t) => {
