@@ -1,6 +1,6 @@
-# MrStarBase
+# Unity MathfExample
 
-Code snippets for Unity.
+This repository contains unit tests for Mathf.
 
 # Author
 Ryota Murohoshi is game Programmer in Japan.
