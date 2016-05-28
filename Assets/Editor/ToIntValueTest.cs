@@ -6,6 +6,7 @@ public class ToIntValueTest
     [Test]
     public void CeilTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.Ceil.html
         Assert.That(Mathf.Ceil(+2.5F), Is.EqualTo(3.0F));
         Assert.That(Mathf.Ceil(+2.1F), Is.EqualTo(3.0F));
         Assert.That(Mathf.Ceil(+2.0F), Is.EqualTo(2.0F));
@@ -32,6 +33,7 @@ public class ToIntValueTest
     [Test]
     public void CeilToIntTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.CeilToInt.html
         Assert.That(Mathf.CeilToInt(+2.5F), Is.EqualTo(3));
         Assert.That(Mathf.CeilToInt(+2.1F), Is.EqualTo(3));
         Assert.That(Mathf.CeilToInt(+2.0F), Is.EqualTo(2));
@@ -59,6 +61,7 @@ public class ToIntValueTest
     [Test]
     public void FloorTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.Floor.html
         Assert.That(Mathf.Floor(+2.5F), Is.EqualTo(2.0F));
         Assert.That(Mathf.Floor(+2.1F), Is.EqualTo(2.0F));
         Assert.That(Mathf.Floor(+2.0F), Is.EqualTo(2.0F));
@@ -85,6 +88,7 @@ public class ToIntValueTest
     [Test]
     public void FloorToIntTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.FloorToInt.html
         Assert.That(Mathf.FloorToInt(+2.5F), Is.EqualTo(2));
         Assert.That(Mathf.FloorToInt(+2.1F), Is.EqualTo(2));
         Assert.That(Mathf.FloorToInt(+2.0F), Is.EqualTo(2));
@@ -111,6 +115,7 @@ public class ToIntValueTest
     [Test]
     public void RoundTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.Round.html
         Assert.That(Mathf.Round(+6.5F), Is.EqualTo(6.0F));
         Assert.That(Mathf.Round(+5.5F), Is.EqualTo(6.0F));
 
@@ -149,6 +154,7 @@ public class ToIntValueTest
     [Test]
     public void RoundToIntTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.RoundToInt.html
         Assert.That(Mathf.RoundToInt(+6.5F), Is.EqualTo(6));
         Assert.That(Mathf.RoundToInt(+5.5F), Is.EqualTo(6));
 
