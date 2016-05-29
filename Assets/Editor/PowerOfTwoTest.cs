@@ -6,6 +6,8 @@ public class PowerOfTwoTest
     [Test]
     public void ClosestPowerOfTwoTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.ClosestPowerOfTwo.html
+        Assert.That(Mathf.ClosestPowerOfTwo(int.MinValue), Is.EqualTo(int.MinValue));
         Assert.That(Mathf.ClosestPowerOfTwo(-128), Is.EqualTo(0));
         Assert.That(Mathf.ClosestPowerOfTwo(-100), Is.EqualTo(0));
 
@@ -36,10 +38,14 @@ public class PowerOfTwoTest
     }
 
     [Test]
-    public void IsPowerOfTwoTst()
+    public void IsPowerOfTwoTest()
     {
-        Assert.False(Mathf.IsPowerOfTwo(-1));
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.IsPowerOfTwo.html
+
+        Assert.True(Mathf.IsPowerOfTwo(int.MinValue));
         Assert.True(Mathf.IsPowerOfTwo(0));
+
+        Assert.False(Mathf.IsPowerOfTwo(-1));
         Assert.True(Mathf.IsPowerOfTwo(1));
         Assert.True(Mathf.IsPowerOfTwo(2));
         Assert.False(Mathf.IsPowerOfTwo(3));
@@ -66,6 +72,7 @@ public class PowerOfTwoTest
     [Test]
     public void NextPowerOfTwoTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.NextPowerOfTwo.html
         Assert.That(Mathf.NextPowerOfTwo(-128), Is.EqualTo(0));
         Assert.That(Mathf.NextPowerOfTwo(-100), Is.EqualTo(0));
 
