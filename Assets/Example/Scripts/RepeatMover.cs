@@ -13,6 +13,7 @@ public class RepeatMover : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        transform.position = basePosition + Mathf.Repeat(time, 2.0F) * Vector3.up;
+        float value = Mathf.Repeat(t: time, length: 1.0F);
+        transform.position = basePosition + value * Vector3.up;
     }
 }

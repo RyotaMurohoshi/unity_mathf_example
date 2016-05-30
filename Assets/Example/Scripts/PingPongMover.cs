@@ -13,6 +13,7 @@ public class PingPongMover : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        transform.position = basePosition + Mathf.PingPong(time, 2.0F) * Vector3.up;
+        float value = Mathf.PingPong(t: time, length: 1.0F);
+        transform.position = basePosition + value * Vector3.up;
     }
 }
