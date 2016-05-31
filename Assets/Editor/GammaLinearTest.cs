@@ -6,6 +6,7 @@ public class GammaLinearTest
     [Test]
     public void GammaToLinnearSpaceTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.GammaToLinearSpace.html
         Assert.AreEqual(0.0F, Mathf.GammaToLinearSpace(0.0F));
         Assert.AreEqual(0.01002283F, Mathf.GammaToLinearSpace(0.1F), 0.00001F);
         Assert.AreEqual(0.03310477F, Mathf.GammaToLinearSpace(0.2F), 0.00001F);
@@ -17,13 +18,12 @@ public class GammaLinearTest
         Assert.AreEqual(0.60382740F, Mathf.GammaToLinearSpace(0.8F), 0.00001F);
         Assert.AreEqual(0.78741250F, Mathf.GammaToLinearSpace(0.9F), 0.00001F);
         Assert.AreEqual(1.0F, Mathf.GammaToLinearSpace(1.0F));
-
-        // TODO Add more test
     }
 
     [Test]
     public void LinearToGammaSpaceTest()
     {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.LinearToGammaSpace.html
         Assert.AreEqual(0.0F, Mathf.LinearToGammaSpace(0.0F));
         Assert.AreEqual(0.3491902F, Mathf.LinearToGammaSpace(0.1F), 0.00001F);
         Assert.AreEqual(0.4845292F, Mathf.LinearToGammaSpace(0.2F), 0.00001F);
@@ -35,7 +35,5 @@ public class GammaLinearTest
         Assert.AreEqual(0.9063317F, Mathf.LinearToGammaSpace(0.8F), 0.00001F);
         Assert.AreEqual(0.9546872F, Mathf.LinearToGammaSpace(0.9F), 0.00001F);
         Assert.AreEqual(1.0F, Mathf.LinearToGammaSpace(1.0F));
-
-        // TODO Add more test
     }
 }
