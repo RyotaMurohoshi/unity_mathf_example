@@ -18,16 +18,16 @@ public class OthersTest
     public void AbsIntTest()
     {
         // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.Abs.html
-        Assert.That(Mathf.Abs(0), Is.EqualTo(0));
-        Assert.That(Mathf.Abs(1), Is.EqualTo(1));
-        Assert.That(Mathf.Abs(-1), Is.EqualTo(1));
-        Assert.That(Mathf.Abs(6), Is.EqualTo(6));
-        Assert.That(Mathf.Abs(-7), Is.EqualTo(7));
-        Assert.That(Mathf.Abs(int.MaxValue), Is.EqualTo(int.MaxValue));
+        Assert.That(Mathf.Abs(value: 0), Is.EqualTo(0));
+        Assert.That(Mathf.Abs(value: 1), Is.EqualTo(1));
+        Assert.That(Mathf.Abs(value: -1), Is.EqualTo(1));
+        Assert.That(Mathf.Abs(value: 6), Is.EqualTo(6));
+        Assert.That(Mathf.Abs(value: -7), Is.EqualTo(7));
+        Assert.That(Mathf.Abs(value: int.MaxValue), Is.EqualTo(int.MaxValue));
 
         Assert.Throws<System.OverflowException>(() =>
         {
-            Mathf.Abs(int.MinValue);
+            Mathf.Abs(value: int.MinValue);
         });
     }
 
@@ -35,13 +35,13 @@ public class OthersTest
     public void AbsFloatTest()
     {
         // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.Abs.html
-        Assert.That(Mathf.Abs(0.0F), Is.EqualTo(0.0F));
-        Assert.That(Mathf.Abs(1.0F), Is.EqualTo(1.0F));
-        Assert.That(Mathf.Abs(-1.0F), Is.EqualTo(1.0F));
-        Assert.That(Mathf.Abs(6.0F), Is.EqualTo(6.0F));
-        Assert.That(Mathf.Abs(-7.0F), Is.EqualTo(7.0F));
-        Assert.That(Mathf.Abs(float.MaxValue), Is.EqualTo(float.MaxValue));
-        Assert.That(Mathf.Abs(float.MinValue), Is.EqualTo(float.MaxValue));
+        Assert.That(Mathf.Abs(f: 0.0F), Is.EqualTo(0.0F));
+        Assert.That(Mathf.Abs(f: 1.0F), Is.EqualTo(1.0F));
+        Assert.That(Mathf.Abs(f: -1.0F), Is.EqualTo(1.0F));
+        Assert.That(Mathf.Abs(f: 6.0F), Is.EqualTo(6.0F));
+        Assert.That(Mathf.Abs(f: -7.0F), Is.EqualTo(7.0F));
+        Assert.That(Mathf.Abs(f: float.MaxValue), Is.EqualTo(float.MaxValue));
+        Assert.That(Mathf.Abs(f: float.MinValue), Is.EqualTo(float.MaxValue));
     }
 
     [Test]
