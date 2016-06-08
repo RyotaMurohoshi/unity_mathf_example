@@ -8,15 +8,18 @@ public class KeyMover : MonoBehaviour
         {
             transform.position += 5.0F * Time.deltaTime * Vector3.up;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += 5.0F * Time.deltaTime * Vector3.right;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position += 5.0F * Time.deltaTime * Vector3.down;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += 5.0F * Time.deltaTime * Vector3.left;
         }
