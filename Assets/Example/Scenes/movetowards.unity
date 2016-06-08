@@ -96,7 +96,7 @@ GameObject:
   - 212: {fileID: 722473273}
   - 114: {fileID: 722473275}
   m_Layer: 0
-  m_Name: PingPong
+  m_Name: MoveToWards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &722473275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,9 +153,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 722473272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b56bb5616ed372418827a3a7354738f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc3a218d9d41e04784a88a18dea3e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 2004212203}
+  velocity: 1
 --- !u!1 &972951062
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +218,7 @@ Camera:
   far clip plane: 1
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -242,7 +244,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &2004212201
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ GameObject:
   - 212: {fileID: 2004212202}
   - 114: {fileID: 2004212204}
   m_Layer: 0
-  m_Name: Repeat
+  m_Name: KeyMover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +304,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &2004212204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +313,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2004212201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df03165ca36d73e44853f19a657f94bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 89a23ac9f19776343aeccd7f23a1d483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
