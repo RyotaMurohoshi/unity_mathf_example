@@ -95,4 +95,12 @@ public class OthersTest
         Assert.That(Mathf.Sign(-1.5F), Is.EqualTo(-1.0F));
         Assert.That(Mathf.Sign(float.NegativeInfinity), Is.EqualTo(-1.0F));
     }
+
+    [Test]
+    public void ParlinNoiseTest()
+    {
+        // http://docs.unity3d.com/ja/current/ScriptReference/Mathf.PerlinNoise.html
+        Assert.That(Mathf.PerlinNoise(0.0F, 0.0F), Is.EqualTo(0.465273082F));
+    }
+
 }
