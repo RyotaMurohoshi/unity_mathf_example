@@ -73,6 +73,21 @@ public class SmoothsTest
     [Test]
     public void SmoothStepTest()
     {
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.0F), Is.EqualTo(0.0F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.1F), Is.EqualTo(0.0280000009F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.2F), Is.EqualTo(0.104000002F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.3F), Is.EqualTo(0.216000021F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.4F), Is.EqualTo(0.351999998F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.5F), Is.EqualTo(0.5F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.6F), Is.EqualTo(0.648000062F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.7F), Is.EqualTo(0.783999979F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.8F), Is.EqualTo(0.896000028F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.9F), Is.EqualTo(0.972000003F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 1.0F), Is.EqualTo(1.0F));
+
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: -0.2F), Is.EqualTo(0.0F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 1.1F), Is.EqualTo(1.0F));
+
         Action<float, float, float> test = (float a, float b, float t) =>
         {
             float actual = Mathf.SmoothStep(a, b, t);
@@ -80,26 +95,26 @@ public class SmoothsTest
             Assert.AreEqual(expected, actual);
         };
 
-        Assert.That(Mathf.SmoothStep(0.0F, 1.0F, 0.0F), Is.EqualTo(0.0F));
-        Assert.That(Mathf.SmoothStep(0.0F, 1.0F, 1.0F), Is.EqualTo(1.0F));
-        Assert.That(Mathf.SmoothStep(0.0F, 1.0F, -0.3F), Is.EqualTo(0.0F));
-        Assert.That(Mathf.SmoothStep(0.0F, 1.0F, 1.2F), Is.EqualTo(1.0F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 0.0F), Is.EqualTo(0.0F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 1.0F), Is.EqualTo(1.0F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: -0.3F), Is.EqualTo(0.0F));
+        Assert.That(Mathf.SmoothStep(from: 0.0F, to: 1.0F, t: 1.2F), Is.EqualTo(1.0F));
         test(0.0F, 1.0F, 0.1F);
         test(0.0F, 1.0F, 0.5F);
         test(0.0F, 1.0F, 0.8F);
 
-        Assert.That(Mathf.SmoothStep(2.0F, 5.0F, 0.0F), Is.EqualTo(2.0F));
-        Assert.That(Mathf.SmoothStep(2.0F, 5.0F, 1.0F), Is.EqualTo(5.0F));
-        Assert.That(Mathf.SmoothStep(2.0F, 5.0F, -0.3F), Is.EqualTo(2.0F));
-        Assert.That(Mathf.SmoothStep(2.0F, 5.0F, 1.2F), Is.EqualTo(5.0F));
+        Assert.That(Mathf.SmoothStep(from: 2.0F, to: 5.0F, t: 0.0F), Is.EqualTo(2.0F));
+        Assert.That(Mathf.SmoothStep(from: 2.0F, to: 5.0F, t: 1.0F), Is.EqualTo(5.0F));
+        Assert.That(Mathf.SmoothStep(from: 2.0F, to: 5.0F, t: -0.3F), Is.EqualTo(2.0F));
+        Assert.That(Mathf.SmoothStep(from: 2.0F, to: 5.0F, t: 1.2F), Is.EqualTo(5.0F));
         test(2.0F, 5.0F, 0.1F);
         test(2.0F, 5.0F, 0.5F);
         test(2.0F, 5.0F, 0.8F);
 
-        Assert.That(Mathf.SmoothStep(4.0F, 1.0F, 0.0F), Is.EqualTo(4.0F));
-        Assert.That(Mathf.SmoothStep(4.0F, 1.0F, 1.0F), Is.EqualTo(1.0F));
-        Assert.That(Mathf.SmoothStep(4.0F, 1.0F, -0.3F), Is.EqualTo(4.0F));
-        Assert.That(Mathf.SmoothStep(4.0F, 1.0F, 1.2F), Is.EqualTo(1.0F));
+        Assert.That(Mathf.SmoothStep(from: 4.0F, to: 1.0F, t: 0.0F), Is.EqualTo(4.0F));
+        Assert.That(Mathf.SmoothStep(from: 4.0F, to: 1.0F, t: 1.0F), Is.EqualTo(1.0F));
+        Assert.That(Mathf.SmoothStep(from: 4.0F, to: 1.0F, t: -0.3F), Is.EqualTo(4.0F));
+        Assert.That(Mathf.SmoothStep(from: 4.0F, to: 1.0F, t: 1.2F), Is.EqualTo(1.0F));
         test(4.0F, 1.0F, 0.1F);
         test(4.0F, 1.0F, 0.5F);
         test(4.0F, 1.0F, 0.8F);
