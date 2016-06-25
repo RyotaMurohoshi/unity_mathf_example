@@ -94,6 +94,37 @@ public class PowerOfTwoTest
         Assert.True(Mathf.IsPowerOfTwo(8192));
     }
 
+    bool IsPowerOfTwo(int num)
+    {
+        return (num & (num - 1)) == 0;
+    }
+
+    [Test]
+    public void TestMyIsPowerOfTwo()
+    {
+        Assert.True(IsPowerOfTwo(1));
+        Assert.True(IsPowerOfTwo(2));
+        Assert.False(IsPowerOfTwo(3));
+        Assert.True(IsPowerOfTwo(4));
+        Assert.False(IsPowerOfTwo(5));
+        Assert.False(IsPowerOfTwo(6));
+        Assert.False(IsPowerOfTwo(7));
+        Assert.True(IsPowerOfTwo(8));
+        Assert.False(IsPowerOfTwo(9));
+        Assert.False(IsPowerOfTwo(10));
+
+        Assert.True(IsPowerOfTwo(16));
+        Assert.True(IsPowerOfTwo(32));
+        Assert.True(IsPowerOfTwo(64));
+        Assert.True(IsPowerOfTwo(128));
+        Assert.True(IsPowerOfTwo(256));
+        Assert.True(IsPowerOfTwo(512));
+        Assert.True(IsPowerOfTwo(1024));
+        Assert.True(IsPowerOfTwo(2048));
+        Assert.True(IsPowerOfTwo(4096));
+        Assert.True(IsPowerOfTwo(8192));
+    }
+
     [Test]
     public void NextPowerOfTwoTest()
     {
