@@ -1,8 +1,20 @@
 ﻿using UnityEngine;
 using NUnit.Framework;
+using System;
 
 public class PowerOfTwoTest
 {
+    [Test]
+    public void AndTest()
+    {
+        Func<string, int> convert = str => Convert.ToInt32(str, 2);
+
+        Assert.That(convert("0001") & convert("0000"), Is.EqualTo(convert("0000")));
+        Assert.That(convert("0010") & convert("0001"), Is.EqualTo(convert("0000")));
+        Assert.That(convert("0100") & convert("0011"), Is.EqualTo(convert("0000")));
+        Assert.That(convert("1000") & convert("0111"), Is.EqualTo(convert("0000")));
+    }
+
     [Test]
     public void ClosestPowerOfTwoTest()
     {
