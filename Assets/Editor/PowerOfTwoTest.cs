@@ -5,6 +5,19 @@ using System;
 public class PowerOfTwoTest
 {
     [Test]
+    public void errorPowerOfTest()
+    {
+        Func<int, string> convert = num => Convert.ToString(num, 2);
+
+        var minValue = int.MinValue;
+        Assert.That(convert(int.MinValue), Is.EqualTo("10000000000000000000000000000000"));
+        Assert.That(convert(minValue - 1), Is.EqualTo("1111111111111111111111111111111"));
+        Assert.That(convert(0), Is.EqualTo("0"));
+        Assert.That(convert(-1), Is.EqualTo("11111111111111111111111111111111"));
+        Assert.That(minValue - 1, Is.EqualTo(int.MaxValue));
+    }
+
+    [Test]
     public void AndTest()
     {
         Func<string, int> convert = str => Convert.ToInt32(str, 2);
